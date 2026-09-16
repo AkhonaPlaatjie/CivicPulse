@@ -17,6 +17,7 @@ public class Incident {
         this.description = description;
         this.location = location;
         this.priority = priority;
+        this.status = Status.OPEN;
 
 
     }
@@ -41,4 +42,18 @@ public class Incident {
 
     }
     public Status getStatus(){return status;}
+
+    public void markInProgress() {
+        if (status != Status.OPEN) {
+            throw new IllegalStateException("Can only move to IN_PROGRESS from OPEN");
+        }
+        this.status = Status.IN_PROGRESS;
+    }
+
+    public void markResolved() {
+        if (status != Status.IN_PROGRESS) {
+            throw new IllegalStateException("Can only resolve an incident that is IN_PROGRESS");
+        }
+        this.status = Status.RESOLVED;
+    }
 }

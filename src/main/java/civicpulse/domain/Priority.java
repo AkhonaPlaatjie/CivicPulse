@@ -1,4 +1,5 @@
 package civicpulse.domain;
 
-public class Priority {
+public enum Priority {
+    LOW, MEDIUM, HIGH
 }

@@ -1,4 +1,5 @@
 package civicpulse.domain;
 
-public class Status {
+public enum Status {
+    OPEN, IN_PROGRESS, RESOLVED
 }

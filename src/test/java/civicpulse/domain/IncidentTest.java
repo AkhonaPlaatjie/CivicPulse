@@ -41,4 +41,20 @@ public class IncidentTest {
         Incident other = new Incident("Pothole", "Deep pothole", "5th Ave", Priority.MEDIUM);
         assertNotEquals(incident.getId(), other.getId());
     }
+    @Test
+    void statusCanTransitionFromOpenToInProgress(){
+        incident.markInProgress();
+        assertEquals(Status.IN_PROGRESS, incident.getStatus());
+    }
+    @Test
+    void statusCannotSkipDirectlyFromOpenToResolved() {
+        assertThrows(IllegalStateException.class, () -> incident.markResolved());
+    }
+
+    @Test
+    void inProgressIncidentCanBeResolved() {
+        incident.markInProgress();
+        incident.markResolved();
+        assertEquals(Status.RESOLVED, incident.getStatus());
+    }
 }
