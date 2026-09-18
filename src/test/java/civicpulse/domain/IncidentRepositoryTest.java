@@ -21,7 +21,7 @@ public class IncidentRepositoryTest {
         Incident incident = new Incident("Broken streetligh", "Off for 3 nights", "Main Street", Priority.HIGH);
         repository.save(incident);
 
-        Optional<incident> found = repository.findById(incident.getId());
+        Optional<Incident> found = repository.findById(incident.getId());
 
         assertTrue(found.isPresent());
         assertEquals(incident.getId(), found.get().getId());

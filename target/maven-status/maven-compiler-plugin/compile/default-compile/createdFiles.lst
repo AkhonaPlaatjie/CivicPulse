@@ -1,1 +1,4 @@
+civicpulse\domain\IncidentRepository.class
+civicpulse\CivicPulseApplication.class
+civicpulse\api\IncidentController.class
 civicpulse\domain\Incident.class
