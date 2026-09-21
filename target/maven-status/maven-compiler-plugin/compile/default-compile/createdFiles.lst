@@ -1,4 +1,6 @@
 civicpulse\domain\IncidentRepository.class
 civicpulse\CivicPulseApplication.class
 civicpulse\api\IncidentController.class
+civicpulse\api\StatusUpdateRequest.class
+civicpulse\api\IncidentController$1.class
 civicpulse\domain\Incident.class
