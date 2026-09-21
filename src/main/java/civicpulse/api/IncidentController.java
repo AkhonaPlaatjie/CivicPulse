@@ -2,6 +2,7 @@ package civicpulse.api;
 
 import civicpulse.domain.Incident;
 import civicpulse.domain.IncidentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +12,7 @@ import java.util.List;
 @RestController //this one makes the method handles the requests
 @RequestMapping("/incidents") //To not repeat the incident on every method
 public class IncidentController {
-
+    @Autowired
     private final IncidentRepository repository;
 
 public IncidentController(IncidentRepository repository){
@@ -36,5 +37,7 @@ public IncidentController(IncidentRepository repository){
                 .orElseGet(() -> ResponseEntity.notFound().build()); //missing 404
 
 }
+
+
 
 }

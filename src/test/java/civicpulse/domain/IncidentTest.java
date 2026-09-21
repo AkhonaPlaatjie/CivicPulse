@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class IncidentTest {
 
-    private Incident incident;
+    public Incident incident;
 
     @BeforeEach
     void setUp() {

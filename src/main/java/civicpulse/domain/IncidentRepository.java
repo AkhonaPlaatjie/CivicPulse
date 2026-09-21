@@ -7,6 +7,10 @@ import java.util.*;
 @Repository
 public class IncidentRepository {
 
+    public void deleteAll() {
+        incidents.clear();
+    }
+
     private final Map<String, Incident> incidents = new HashMap<>();
 
     public Incident save(Incident incident){

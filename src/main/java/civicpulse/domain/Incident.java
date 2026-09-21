@@ -8,7 +8,7 @@ public class Incident {
     private Priority priority;
     private Status status;
 
-    Incident(String title, String description, String location, Priority priority) {
+    public Incident(String title, String description, String location, Priority priority) {
        if (title == null || title.isBlank()){
            throw new IllegalArgumentException("Title cannot be null or blank");
        }
