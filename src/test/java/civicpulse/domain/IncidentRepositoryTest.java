@@ -13,7 +13,7 @@ public class IncidentRepositoryTest {
 
     @BeforeEach
     void setUp() {
-        repository = new IncidentRepository();
+        repository = new InMemoryIncidentRepository();
     }
 
     @Test
@@ -22,6 +22,7 @@ public class IncidentRepositoryTest {
         repository.save(incident);
 
         Optional<Incident> found = repository.findById(incident.getId());
+
 
         assertTrue(found.isPresent());
         assertEquals(incident.getId(), found.get().getId());

@@ -1,6 +1,7 @@
 package civicpulse.apiTest;
 
 import civicpulse.api.IncidentController;
+import civicpulse.domain.InMemoryIncidentRepository;
 import civicpulse.domain.Incident;
 import civicpulse.domain.IncidentRepository;
 import civicpulse.domain.Priority;
@@ -17,14 +18,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(IncidentController.class)
-@Import(IncidentRepository.class)
+@Import(InMemoryIncidentRepository.class)
 public class IncidentControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
 
     @Autowired
-    private IncidentRepository repository;
+    private InMemoryIncidentRepository repository;
 
     @BeforeEach
     void clearRepository() {

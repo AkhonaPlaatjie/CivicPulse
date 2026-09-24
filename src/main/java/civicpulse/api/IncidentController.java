@@ -1,5 +1,6 @@
 package civicpulse.api;
 
+import civicpulse.domain.InMemoryIncidentRepository;
 import civicpulse.domain.Incident;
 import civicpulse.domain.IncidentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +14,9 @@ import java.util.Optional;
 @RestController //this one makes the method handles the requests
 @RequestMapping("/incidents") //To not repeat the incident on every method
 public class IncidentController {
-    private final IncidentRepository repository;
+    private final InMemoryIncidentRepository repository;
 
-public IncidentController(IncidentRepository repository){
+public IncidentController(InMemoryIncidentRepository repository){
     this.repository = repository;
 }
 

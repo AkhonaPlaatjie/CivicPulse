@@ -1,31 +1,16 @@
 package civicpulse.domain;
 
-import org.springframework.stereotype.Repository;
+import java.util.List;
+import java.util.Optional;
 
-import java.util.*;
+public interface IncidentRepository {
 
-@Repository
-public class IncidentRepository {
+Incident save(Incident incident);
 
-    public void deleteAll() {
-        incidents.clear();
-    }
+Optional<Incident> findById(String id);
 
-    private final Map<String, Incident> incidents = new HashMap<>();
+List<Incident> findAll();
 
-    public Incident save(Incident incident){
-        incidents.put(incident.getId(), incident);
-            return incident;
-    }
-
-    public List<Incident> findAll(){
-
-        return new ArrayList<>(incidents.values());
-    }
-
-    public Optional<Incident> findById(String id){
-
-        return Optional.ofNullable(incidents.get(id));
-    }
+void deleteAll();
 
 }
