@@ -56,3 +56,11 @@ or domain model — only to `IncidentRepository`'s internals.
 - No photo/file attachment support yet.
 - No asynchronous processing (notifications, audit logging) — all
   work happens synchronously within the request.
+
+## Roadmap
+- DynamoDB persistence (DynamoDbIncidentRepository) is implemented but
+  untested against live AWS — account verification did not complete
+  before the submission deadline.
+- Planned next: S3 for photo attachments, SQS for async notification
+  processing, EventBridge for event-driven workflows, Lambda-based
+  deployment, CloudWatch monitoring, IAM least-privilege hardening.

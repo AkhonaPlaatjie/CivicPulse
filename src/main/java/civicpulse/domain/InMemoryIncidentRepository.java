@@ -1,10 +1,12 @@
 package civicpulse.domain;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
 @Repository
+@Primary
 public class InMemoryIncidentRepository implements IncidentRepository  {
 
     @Override

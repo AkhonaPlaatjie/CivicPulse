@@ -8,19 +8,21 @@ public class Incident {
     private Priority priority;
     private Status status;
 
-    public Incident(String title, String description, String location, Priority priority) {
-       if (title == null || title.isBlank()){
-           throw new IllegalArgumentException("Title cannot be null or blank");
-       }
-        this.id = java.util.UUID.randomUUID().toString();
+    public Incident(String id, String title, String description, String location, Priority priority, Status status) {
+        this.id = id;
         this.title = title;
         this.description = description;
         this.location = location;
         this.priority = priority;
-        this.status = Status.OPEN;
+        this.status = status;
 
 
     }
+
+    public static Incident reconstruct(String id, String title, String description, String location, Priority priority, Status status){
+        return new Incident(id, title, description, location, priority, status);
+    }
+
     public String getId(){
         return id;
     }
