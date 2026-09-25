@@ -1,5 +1,7 @@
 package civicpulse.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Incident {
     public final String id;
     private String title;
@@ -8,7 +10,11 @@ public class Incident {
     public Priority priority;
     private Status status;
 
-   public Incident(String title, String description, String location, Priority priority) {
+   public Incident(
+           @JsonProperty("title") String title,
+           @JsonProperty("description") String description,
+           @JsonProperty("location") String location,
+           @JsonProperty("priority") Priority priority) {
        if (title == null || title.isBlank()){
            throw new IllegalArgumentException("Title cannot be null or blank");
        }
